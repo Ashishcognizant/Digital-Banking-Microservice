@@ -1,0 +1,49 @@
+package com.cts.account.controller;
+
+import com.cts.account.exception.AccountNotFoundException;
+import com.cts.account.model.Account;
+import com.cts.account.service.AccountService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/accounts")
+public class AccountController {
+
+    private final AccountService accountService;
+
+    public AccountController(AccountService accountService) {
+        this.accountService = accountService;
+    }
+
+    @PostMapping
+    public Account createAccount(@RequestBody Account account) {
+        return accountService.createAccount(account);
+    }
+
+    @GetMapping("/{id}")
+    public Account getAccount(@PathVariable Long id) {
+        return accountService.getAccount(id); // throws RuntimeException if not found
+    }
+
+    @GetMapping
+    public List<Account> getAllAccounts() {
+        return accountService.getAllAccounts();
+    }
+
+    @PutMapping("/{id}/status")
+    public Account updateStatus(@PathVariable Long id, @RequestParam String status) {
+        return accountService.updateAccountStatus(id, status);
+    }
+
+    @GetMapping("/{id}/balance")
+    public Double getBalance(@PathVariable Long id) {
+        return accountService.getBalance(id);
+    }
+
+    @PutMapping("/{id}/balance")
+    public void updateBalance(@PathVariable Long id, @RequestParam Double newBalance) {
+        accountService.updateBalance(id, newBalance);
+    }
+}

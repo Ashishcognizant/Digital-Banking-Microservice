@@ -1,0 +1,5 @@
+package com.cts.account.exception;
+
+public class GlobalExceptionHandler {
+
+}

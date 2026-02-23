@@ -1,0 +1,5 @@
+package com.cts.transaction.dto;
+
+public class AccountDTO {
+
+}

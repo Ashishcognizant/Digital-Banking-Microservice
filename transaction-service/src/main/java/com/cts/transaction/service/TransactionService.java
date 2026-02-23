@@ -1,8 +1,10 @@
 package com.cts.transaction.service;
 
 import com.cts.transaction.client.AccountClient;
+import com.cts.transaction.dto.AccountDTO;
 import com.cts.transaction.dto.TransactionRequest;
 import com.cts.transaction.dto.TransactionResponse;
+import com.cts.transaction.exception.AccountClosedException;
 import com.cts.transaction.exception.InsufficientFundsException;
 import com.cts.transaction.model.Transaction;
 import com.cts.transaction.repository.TransactionRepository;
@@ -18,10 +20,20 @@ public class TransactionService {
     private final TransactionRepository transactionRepository;
     private final AccountClient accountClient;
 
+    private void validateAccountActive(Long accountId) {
+        AccountDTO account = accountClient.getAccount(accountId);
+        if ("CLOSED".equalsIgnoreCase(account.getStatus())) {
+            throw new AccountClosedException(
+                    "Account " + accountId + " is closed. Transactions are not allowed.");
+        }
+    }
+
     public TransactionResponse deposit(TransactionRequest request) {
+        validateAccountActive(request.getAccountId());
+
         Double currentBalance = accountClient.getBalance(request.getAccountId());
         Double newBalance = currentBalance + request.getAmount();
-        
+
         accountClient.updateBalance(request.getAccountId(), newBalance);
 
         Transaction transaction = Transaction.builder()
@@ -31,9 +43,9 @@ public class TransactionService {
                 .date(LocalDateTime.now())
                 .status("SUCCESS")
                 .build();
-        
+
         transactionRepository.save(transaction);
-        
+
         return TransactionResponse.builder()
                 .transactionId(transaction.getId())
                 .status("SUCCESS")
@@ -42,12 +54,14 @@ public class TransactionService {
     }
 
     public TransactionResponse withdraw(TransactionRequest request) {
+        validateAccountActive(request.getAccountId());
+
         Double currentBalance = accountClient.getBalance(request.getAccountId());
-        
+
         if (currentBalance < request.getAmount()) {
             throw new InsufficientFundsException("Insufficient funds for withdrawal");
         }
-        
+
         Double newBalance = currentBalance - request.getAmount();
         accountClient.updateBalance(request.getAccountId(), newBalance);
 
@@ -58,9 +72,9 @@ public class TransactionService {
                 .date(LocalDateTime.now())
                 .status("SUCCESS")
                 .build();
-        
+
         transactionRepository.save(transaction);
-        
+
         return TransactionResponse.builder()
                 .transactionId(transaction.getId())
                 .status("SUCCESS")
@@ -69,14 +83,17 @@ public class TransactionService {
     }
 
     public TransactionResponse transfer(TransactionRequest request) {
+        validateAccountActive(request.getAccountId());
+        validateAccountActive(request.getToAccountId());
+
         Double fromBalance = accountClient.getBalance(request.getAccountId());
-        
+
         if (fromBalance < request.getAmount()) {
             throw new InsufficientFundsException("Insufficient funds for transfer");
         }
-        
+
         Double toBalance = accountClient.getBalance(request.getToAccountId());
-        
+
         accountClient.updateBalance(request.getAccountId(), fromBalance - request.getAmount());
         accountClient.updateBalance(request.getToAccountId(), toBalance + request.getAmount());
 
@@ -87,9 +104,9 @@ public class TransactionService {
                 .date(LocalDateTime.now())
                 .status("SUCCESS")
                 .build();
-        
+
         transactionRepository.save(transaction);
-        
+
         return TransactionResponse.builder()
                 .transactionId(transaction.getId())
                 .status("SUCCESS")

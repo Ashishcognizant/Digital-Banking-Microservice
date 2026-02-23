@@ -1,2 +1,3 @@
-2026/02/21-21:00:35.021 46d4 Creating DB C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Sync Data\LevelDB since it was missing.
-2026/02/21-21:00:35.066 46d4 Reusing MANIFEST C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Sync Data\LevelDB/MANIFEST-000001
+2026/02/23-09:55:01.102 319c Reusing MANIFEST C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Sync Data\LevelDB/MANIFEST-000001
+2026/02/23-09:55:01.135 319c Recovering log #3
+2026/02/23-09:55:01.136 319c Reusing old log C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Sync Data\LevelDB/000003.log 

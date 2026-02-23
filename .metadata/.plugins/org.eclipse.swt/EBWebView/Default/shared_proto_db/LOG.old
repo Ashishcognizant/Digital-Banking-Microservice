@@ -1,2 +1,3 @@
-2026/02/21-21:00:35.383 5c5c Creating DB C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db since it was missing.
-2026/02/21-21:00:35.439 5c5c Reusing MANIFEST C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db/MANIFEST-000001
+2026/02/23-09:55:01.186 134c Reusing MANIFEST C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db/MANIFEST-000001
+2026/02/23-09:55:01.210 134c Recovering log #3
+2026/02/23-09:55:01.211 134c Reusing old log C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db/000003.log 

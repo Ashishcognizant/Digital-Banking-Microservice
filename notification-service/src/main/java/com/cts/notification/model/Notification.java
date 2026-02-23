@@ -24,4 +24,6 @@ public class Notification {
     private NotificationStatus status;
     
     private LocalDateTime createdAt;
+    
+    private LocalDateTime readAt;
 }

@@ -27,6 +27,7 @@ public class NotificationService {
     public Notification markRead(Long id) {
         Notification notification = notificationRepository.findById(id).orElseThrow();
         notification.setStatus(NotificationStatus.READ);
+        notification.setReadAt(LocalDateTime.now());
         return notificationRepository.save(notification);
     }
 
@@ -36,6 +37,7 @@ public class NotificationService {
                 .message(message)
                 .status(NotificationStatus.UNREAD)
                 .createdAt(LocalDateTime.now())
+                .readAt(null)
                 .build();
         return notificationRepository.save(notification);
     }
@@ -47,6 +49,7 @@ public class NotificationService {
                 .message(n.getMessage())
                 .status(n.getStatus())
                 .createdAt(n.getCreatedAt())
+                .readAt(n.getReadAt())
                 .build();
     }
 }

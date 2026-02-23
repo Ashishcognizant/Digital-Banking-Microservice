@@ -14,4 +14,5 @@ public class NotificationResponse {
     private String message;
     private NotificationStatus status;
     private LocalDateTime createdAt;
+    private LocalDateTime readAt;
 }

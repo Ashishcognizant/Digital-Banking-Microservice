@@ -4,17 +4,20 @@ import com.cts.user.model.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
 public class RegisterRequest {
-    @NotBlank
+	@NotBlank(message = "Name is required")
     private String name;
     
-    @NotBlank
-    @Email
+	@NotBlank(message = "Email is required")
+    @Email(message = "Please provide a valid email address")
     private String email;
     
+	@NotBlank(message = "Phone is required")
+    @Size(min = 10, message = "Phone must be at most 10 characters")
     private String phone;
     
     @NotNull

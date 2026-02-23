@@ -9,4 +9,5 @@ public class TransactionResponse {
     private Long transactionId;
     private String status;
     private String message;
+    private Double amount;
 }

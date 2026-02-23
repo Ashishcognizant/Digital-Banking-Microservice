@@ -50,6 +50,7 @@ public class TransactionService {
                 .transactionId(transaction.getId())
                 .status("SUCCESS")
                 .message("Deposit successful")
+                .amount(request.getAmount())
                 .build();
     }
 
@@ -79,6 +80,7 @@ public class TransactionService {
                 .transactionId(transaction.getId())
                 .status("SUCCESS")
                 .message("Withdrawal successful")
+                .amount(request.getAmount())
                 .build();
     }
 
@@ -111,6 +113,7 @@ public class TransactionService {
                 .transactionId(transaction.getId())
                 .status("SUCCESS")
                 .message("Transfer successful")
+                .amount(request.getAmount())
                 .build();
     }
 }

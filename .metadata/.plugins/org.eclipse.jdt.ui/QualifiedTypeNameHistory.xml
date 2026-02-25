@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
+    <fullyQualifiedTypeName name="jakarta.validation.constraints.Size"/>
+    <fullyQualifiedTypeName name="com.cts.notification.repository.NotificationRepository"/>
+    <fullyQualifiedTypeName name="com.cts.notification.model.Notification"/>
+    <fullyQualifiedTypeName name="com.cts.notification.dto.NotificationResponse"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="com.cts.notification.model.NotificationStatus"/>
 </qualifiedTypeNameHistroy>

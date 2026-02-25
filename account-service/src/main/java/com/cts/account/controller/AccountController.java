@@ -1,6 +1,5 @@
 package com.cts.account.controller;
 
-import com.cts.account.exception.AccountNotFoundException;
 import com.cts.account.model.Account;
 import com.cts.account.service.AccountService;
 import org.springframework.web.bind.annotation.*;

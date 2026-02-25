@@ -7,9 +7,9 @@ import lombok.Data;
 @Builder
 public class FinancialReportResponse {
     private Long reportId;
-    private Integer totalTransactions;
+    private long totalTransactions;
     private Double totalAmount;
-    private Integer fraudAlerts;
+    private long fraudAlerts;
     private String period;
     private String generatedAt;
 }

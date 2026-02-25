@@ -19,10 +19,8 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 2270303329.index
 2138330381.index
 1541733575.index
-3802014884.index
 200555804.index
 3786865262.index
-3653947807.index
 4007386753.index
 2086793636.index
 986430273.index
@@ -32,9 +30,7 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 2058268916.index
 3780438044.index
 4145182846.index
-1909728946.index
 446849953.index
-1763963419.index
 738168542.index
 3271095482.index
 1286843889.index
@@ -82,8 +78,8 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 3942784307.index
 3521447475.index
 706485438.index
-4283897030.index
 3693709918.index
+4283897030.index
 2860093584.index
 2855512172.index
 3318493316.index
@@ -91,7 +87,6 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 3111665320.index
 626567494.index
 3417993618.index
-2862044391.index
 80854850.index
 711866818.index
 1930954499.index
@@ -99,10 +94,8 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 2282295466.index
 2071194673.index
 2589551769.index
-2014192010.index
 3299269003.index
 1252073343.index
-2815577067.index
 1931637495.index
 1070151960.index
 2425634111.index
@@ -111,7 +104,6 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 2463124329.index
 463688524.index
 1445519114.index
-2611551493.index
 2116111855.index
 1625758738.index
 3710721708.index
@@ -119,7 +111,6 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 1080693792.index
 3325106441.index
 577173287.index
-2172654990.index
 1839691418.index
 521956926.index
 3389849452.index
@@ -127,14 +118,11 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 1318737985.index
 2715583701.index
 1444286766.index
-1795315358.index
 3442121372.index
 4123959092.index
 1960080400.index
-4139379246.index
 1220749343.index
 3297442046.index
-2526320659.index
 4239337218.index
 2039801050.index
 3241911870.index
@@ -143,7 +131,6 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 2587213029.index
 3104338228.index
 2204756803.index
-3257339464.index
 456005303.index
 4109134351.index
 2977612127.index
@@ -186,7 +173,6 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 1867639710.index
 197001925.index
 2577569853.index
-1064654903.index
 1050042363.index
 2252048171.index
 2284531500.index
@@ -206,9 +192,7 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 3787715490.index
 4102410296.index
 4236528418.index
-1588573798.index
 2430117004.index
-636326901.index
 357122184.index
 1292613387.index
 867692396.index

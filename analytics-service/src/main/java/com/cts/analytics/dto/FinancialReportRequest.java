@@ -1,10 +1,11 @@
 package com.cts.analytics.dto;
 
 import lombok.Data;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 public class FinancialReportRequest {
-    private LocalDate periodStart;
-    private LocalDate periodEnd;
+    private LocalDateTime from;
+    private LocalDateTime to;
+    private Double fraudAmountThreshold;
 }

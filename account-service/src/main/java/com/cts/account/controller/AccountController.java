@@ -2,6 +2,7 @@ package com.cts.account.controller;
 
 import com.cts.account.model.Account;
 import com.cts.account.service.AccountService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,16 +22,22 @@ public class AccountController {
         return accountService.createAccount(account);
     }
 
+    // ADMIN-only: Get account by id
+    
     @GetMapping("/{id}")
     public Account getAccount(@PathVariable Long id) {
-        return accountService.getAccount(id); // throws RuntimeException if not found
+        return accountService.getAccount(id); // throws AccountNotFoundException if not found
     }
 
+    // ADMIN-only: Get all accounts
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public List<Account> getAllAccounts() {
         return accountService.getAllAccounts();
     }
 
+ // ADMIN-only: Get all accounts
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}/status")
     public Account updateStatus(@PathVariable Long id, @RequestParam String status) {
         return accountService.updateAccountStatus(id, status);

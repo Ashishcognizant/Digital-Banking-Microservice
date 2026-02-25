@@ -87,6 +87,7 @@ INDEX VERSION 1.134+C:\Users\2472535\Documents\Bank-Track-Microservice\.metadata
 3111665320.index
 626567494.index
 3417993618.index
+2862044391.index
 80854850.index
 711866818.index
 1930954499.index

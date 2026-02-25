@@ -4,6 +4,7 @@ import com.cts.account.exception.AccountNotFoundException;
 import com.cts.account.model.Account;
 import com.cts.account.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,19 +15,26 @@ public class AccountService {
 
     private final AccountRepository accountRepository;
 
+    // You can decide whether create needs admin; leaving it open here.
     public Account createAccount(Account account) {
         return accountRepository.save(account);
     }
 
+    // ADMIN-only: Fetch a specific account
+   
     public Account getAccount(Long id) {
         return accountRepository.findById(id)
                 .orElseThrow(() -> new AccountNotFoundException("Account not found with id: " + id));
     }
 
+    // ADMIN-only: Fetch all accounts
+    @PreAuthorize("hasRole('ADMIN')")
     public List<Account> getAllAccounts() {
         return accountRepository.findAll();
     }
 
+    // You can also restrict updates as needed (optional)
+    @PreAuthorize("hasRole('ADMIN')")
     public Account updateAccountStatus(Long id, String status) {
         Account account = getAccount(id);
         account.setStatus(status);
